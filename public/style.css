@@ -1,0 +1,20 @@
+body{
+    height: 200vh;
+}
+
+
+/* navbar */
+
+.navbar , .navbar-brand{
+    transition: all 0.5s ease !important;
+}
+
+.size-down{
+    padding: 0 !important;
+    transition: all 0.5s ease !important;   
+}
+
+.size-down .navbar-brand{
+    font-size: 1.5rem !important;
+    transition: all 0.5s ease !important;   
+}

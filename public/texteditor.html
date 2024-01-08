@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Text Editor</title>
+    <style>
+        #editor {
+            border: 1px solid #ccc;
+            min-height: 200px;
+            padding: 10px;
+            font-family: Arial, sans-serif;
+        }
+    </style>
+</head>
+<body>
+    <div id="editor" contenteditable="true"></div>
+    <div>
+        <button onclick="execCommand('bold')">Bold</button>
+        <button onclick="execCommand('italic')">Italic</button>
+        <button onclick="execCommand('underline')">Underline</button>
+        <button onclick="execCommand('insertunorderedlist')">Unordered List</button>
+        <button onclick="execCommand('insertorderedlist')">Ordered List</button>
+        <label for="fontSize">Font Size:</label>
+        <select id="fontSize" onchange="execCommand('fontSize', false, this.value)">
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+            <option value="6">6</option>
+            <option value="7">7</option>
+        </select>
+        <label for="fontColor">Font Color:</label>
+        <input type="color" id="fontColor" onchange="execCommand('foreColor', false, this.value)">
+        <input type="file" id="imageInput" accept="image/*" style="display: none;">
+        <button onclick="insertImage()">Insert Image</button>
+    </div>
+
+    <script>
+        function execCommand(command, showDefaultUI = false, value = null) {
+            document.execCommand(command, showDefaultUI, value);
+        }
+
+        function insertImage() {
+            const imageInput = document.getElementById('imageInput');
+            imageInput.click();
+
+            imageInput.addEventListener('change', function() {
+                const file = imageInput.files[0];
+                if (file) {
+                    const reader = new FileReader();
+                    reader.onload = function(e) {
+                        const imageUrl = e.target.result;
+                        execCommand('insertImage', false, imageUrl);
+                    };
+                    reader.readAsDataURL(file);
+                }
+            });
+        }
+    </script>
+</body>
+</html>
