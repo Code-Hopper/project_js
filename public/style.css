@@ -46,3 +46,16 @@ body{
 .add-pointer{
     cursor: pointer;
 }
+
+.mega-nav li:nth-child(1){
+    font-size: 1.3rem;
+    font-weight: bold;
+}
+
+@media screen and (max-width: 576px){
+    #services-dropdown{
+        max-height: 250px;
+        overflow-y: scroll;
+        overflow-x: hidden;
+    }
+}

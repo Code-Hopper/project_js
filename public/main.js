@@ -22,6 +22,29 @@ serviceDropdownButton.addEventListener("mouseover", () => {
     document.getElementById("services-dropdown").classList.remove("d-none")
 })
 
-serviceDropdownButton.addEventListener("click", () => {
+document.addEventListener("click", () => {
     document.getElementById("services-dropdown").classList.add("d-none")
 })
+
+// typed text animation
+
+let element = document.getElementById("typed-text")
+
+let index = 0;
+
+let type_string = "< Code Hopper /> !" 
+
+let speed = 150;
+
+let typingText = () =>{
+    
+    if(index < type_string.length){
+        element.innerHTML = element.innerHTML + type_string.charAt(index) 
+        index++
+    }
+
+    setTimeout(typingText, speed);
+
+}
+
+typingText()
