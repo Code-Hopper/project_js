@@ -25,10 +25,10 @@
 <body>
 
     <!-- navbar -->
-    <div id="navbar" class="container-fluid bg-dark position-sticky top-0">
+    <div id="navbar" class="container-fluid position-fixed top-0">
         <div class="container">
-            <nav id="navbar-content" class="navbar navbar-expand-md navbar-dark bg-dark">
-                <a class="navbar-brand fs-3" href="">Code<span class="text-danger">Hopper</span></a>
+            <nav id="navbar-content" class="navbar navbar-dark navbar-expand-md">
+                <a class="navbar-brand fs-3 text-light fw-bolder" href="">Code<span class="text-danger">Hopper</span></a>
 
                 <button class="navbar-toggler" data-bs-toggle="offcanvas" data-bs-target="#mobileoff">
                     <span class="navbar-toggler-icon"></span>
@@ -173,12 +173,12 @@
     </div>
 
     <!-- heros section -->
-    <div class="container-fluid">
+    <div class="container-fluid complete-heros">
 
-        <div class="container">
-            <div class="row">
-                <div class="col">
-                    <h1>Welcome to <span class="text-danger" id="typed-text"></span></h1>
+        <div class="container heros-content">
+            <div class="heros">
+                <div class="heros">
+                    <h1 class="text-light">Welcome to <span class="text-danger" id="typed-text"></span></h1>
                 </div>
                 <div class="col">
                     
@@ -186,6 +186,42 @@
             </div>
         </div>
 
+    </div>
+
+    <!-- ABOUYT US -->
+
+    <div class="container-fluid">
+        <div class="container my-5">
+            <div class="row">
+                <di class="col-12 col-md-6 images-grid">
+                    <div class="img-grid">
+                        <div class="grid-images">
+                            <img class="img-fluid"  data-images="image1" src="https://picsum.photos/id/237/200/200" alt="">
+                        </div>
+                        <div class="grid-images" >
+                            <img class="img-fluid" data-images="image2" src="https://picsum.photos/id/238/200/200" alt="">
+                        </div>
+                        <div class="grid-images" >
+                            <img class="img-fluid" data-images="image3" src="https://picsum.photos/id/239/200/200" alt="">
+                        </div>
+                        <div class="grid-images" >
+                            <img class="img-fluid" data-images="image4" src="https://picsum.photos/id/240/200/200" alt="">
+                        </div>
+                        <div class="grid-images">
+                            <img class="img-fluid" data-images="image5" src="https://picsum.photos/id/241/200/200" alt="">
+                        </div>
+                        <div class="grid-images" >
+                            <img class="img-fluid" data-images="image6" src="https://picsum.photos/id/242/200/200" alt="">
+                        </div>
+                    </div>
+                </di>
+                <div class="col-12 col-md-6 image-related-text">
+                    <h1>Lorem ipsum dolor sit.</h1>
+                    <p class="text-change"> Lorem ipsum dolor, sit amet consectetur adipisicing elit. Atque, voluptate facilis libero blanditiis cum magni eligendi sed ipsam. Earum amet odit omnis cupiditate porro a nemo aperiam repellendus hic voluptate.</p>
+                    <h1 id="write-content"></h1>
+                </div>
+            </div>
+        </div>
     </div>
 
 

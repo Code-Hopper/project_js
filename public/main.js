@@ -32,14 +32,14 @@ let element = document.getElementById("typed-text")
 
 let index = 0;
 
-let type_string = "< Code Hopper /> !" 
+let type_string = "< Code Hopper /> !"
 
 let speed = 150;
 
-let typingText = () =>{
-    
-    if(index < type_string.length){
-        element.innerHTML = element.innerHTML + type_string.charAt(index) 
+let typingText = () => {
+
+    if (index < type_string.length) {
+        element.innerHTML = element.innerHTML + type_string.charAt(index)
         index++
     }
 
@@ -48,3 +48,85 @@ let typingText = () =>{
 }
 
 typingText()
+
+// text-change on image click
+
+let grid_images = document.getElementsByClassName("grid-images")
+
+console.log(grid_images)
+
+for (let element of grid_images) {
+    element.addEventListener("click", (event) => {
+
+        // console.log(element.dataset.images)
+
+        let the_img_element_has = element.children[0].src
+
+        let c_d_m = element.children[0].dataset.images
+
+        console.log(the_img_element_has)
+
+        let selected_image = element.children[0].dataset.images
+
+        console.log(selected_image)
+
+        let where_to_write = document.getElementById("write-content")
+
+        let the_src_of_1 = document.querySelector(".grid-images:nth-child(1) img").src
+
+        let c_d_c = document.querySelector(".grid-images:nth-child(1) img").dataset.images
+
+
+        switch (selected_image) {
+            case "image1": where_to_write.innerHTML = "image 1 is selected !"
+                document.querySelector(".grid-images:nth-child(1) img").src = the_img_element_has
+                element.children[0].src = the_src_of_1
+                
+                document.querySelector(".grid-images:nth-child(1) img").dataset.images = c_d_m 
+                element.children[0].dataset.images = c_d_c  
+
+                break;
+            case "image2": where_to_write.innerHTML = "image 2 is selected !"
+                document.querySelector(".grid-images:nth-child(1) img").src = the_img_element_has
+                element.children[0].src = the_src_of_1
+
+                document.querySelector(".grid-images:nth-child(1) img").dataset.images = c_d_m 
+                element.children[0].dataset.images = c_d_c 
+                
+                break;
+            case "image3": where_to_write.innerHTML = "image 3 is selected !"
+                document.querySelector(".grid-images:nth-child(1) img").src = the_img_element_has
+                element.children[0].src = the_src_of_1
+
+                document.querySelector(".grid-images:nth-child(1) img").dataset.images = c_d_m 
+                element.children[0].dataset.images = c_d_c 
+
+                break;
+            case "image4": where_to_write.innerHTML = "image 4 is selected !"
+                document.querySelector(".grid-images:nth-child(1) img").src = the_img_element_has
+                element.children[0].src = the_src_of_1
+
+                document.querySelector(".grid-images:nth-child(1) img").dataset.images = c_d_m 
+                element.children[0].dataset.images = c_d_c 
+
+                break;
+            case "image5": where_to_write.innerHTML = "image 5 is selected !"
+                document.querySelector(".grid-images:nth-child(1) img").src = the_img_element_has
+                element.children[0].src = the_src_of_1
+
+                document.querySelector(".grid-images:nth-child(1) img").dataset.images = c_d_m 
+                element.children[0].dataset.images = c_d_c 
+
+                break;
+            case "image6": where_to_write.innerHTML = "image 6 is selected !"
+                document.querySelector(".grid-images:nth-child(1) img").src = the_img_element_has
+                element.children[0].src = the_src_of_1
+
+                document.querySelector(".grid-images:nth-child(1) img").dataset.images = c_d_m 
+                element.children[0].dataset.images = c_d_c 
+
+                break;
+        }
+    })
+}
+
