@@ -81,52 +81,98 @@ for (let element of grid_images) {
             case "image1": where_to_write.innerHTML = "image 1 is selected !"
                 document.querySelector(".grid-images:nth-child(1) img").src = the_img_element_has
                 element.children[0].src = the_src_of_1
-                
-                document.querySelector(".grid-images:nth-child(1) img").dataset.images = c_d_m 
-                element.children[0].dataset.images = c_d_c  
+
+                document.querySelector(".grid-images:nth-child(1) img").dataset.images = c_d_m
+                element.children[0].dataset.images = c_d_c
 
                 break;
             case "image2": where_to_write.innerHTML = "image 2 is selected !"
                 document.querySelector(".grid-images:nth-child(1) img").src = the_img_element_has
                 element.children[0].src = the_src_of_1
 
-                document.querySelector(".grid-images:nth-child(1) img").dataset.images = c_d_m 
-                element.children[0].dataset.images = c_d_c 
-                
+                document.querySelector(".grid-images:nth-child(1) img").dataset.images = c_d_m
+                element.children[0].dataset.images = c_d_c
+
                 break;
             case "image3": where_to_write.innerHTML = "image 3 is selected !"
                 document.querySelector(".grid-images:nth-child(1) img").src = the_img_element_has
                 element.children[0].src = the_src_of_1
 
-                document.querySelector(".grid-images:nth-child(1) img").dataset.images = c_d_m 
-                element.children[0].dataset.images = c_d_c 
+                document.querySelector(".grid-images:nth-child(1) img").dataset.images = c_d_m
+                element.children[0].dataset.images = c_d_c
 
                 break;
             case "image4": where_to_write.innerHTML = "image 4 is selected !"
                 document.querySelector(".grid-images:nth-child(1) img").src = the_img_element_has
                 element.children[0].src = the_src_of_1
 
-                document.querySelector(".grid-images:nth-child(1) img").dataset.images = c_d_m 
-                element.children[0].dataset.images = c_d_c 
+                document.querySelector(".grid-images:nth-child(1) img").dataset.images = c_d_m
+                element.children[0].dataset.images = c_d_c
 
                 break;
             case "image5": where_to_write.innerHTML = "image 5 is selected !"
                 document.querySelector(".grid-images:nth-child(1) img").src = the_img_element_has
                 element.children[0].src = the_src_of_1
 
-                document.querySelector(".grid-images:nth-child(1) img").dataset.images = c_d_m 
-                element.children[0].dataset.images = c_d_c 
+                document.querySelector(".grid-images:nth-child(1) img").dataset.images = c_d_m
+                element.children[0].dataset.images = c_d_c
 
                 break;
             case "image6": where_to_write.innerHTML = "image 6 is selected !"
                 document.querySelector(".grid-images:nth-child(1) img").src = the_img_element_has
                 element.children[0].src = the_src_of_1
 
-                document.querySelector(".grid-images:nth-child(1) img").dataset.images = c_d_m 
-                element.children[0].dataset.images = c_d_c 
+                document.querySelector(".grid-images:nth-child(1) img").dataset.images = c_d_m
+                element.children[0].dataset.images = c_d_c
 
                 break;
         }
     })
 }
 
+
+// slider
+
+let prevBtn = $("#prevBtn")
+let nextBtn = $("#nextBtn")
+
+// slide to the right 
+
+let increaseLeft = () => {
+    let curentLeft = $(".slider-content").css("left")
+    $(".slider-content").css("left", () => {
+        if (parseInt(curentLeft) == 0) {
+            return 0
+        } else {
+            return parseInt(curentLeft) + 100
+        }
+    })
+}
+
+// slide to the left 
+
+let decreaseLeft = () => {
+
+    let finalWidth = $(".slider-content").css("width")
+
+    console.log(parseInt(finalWidth))
+
+    let curentLeft = $(".slider-content").css("left")
+
+    console.log(Math.abs(parseInt(curentLeft)))
+
+
+    $(".slider-content").css("left", () => {
+        if(Math.abs(parseInt(curentLeft)) > parseInt(finalWidth)){
+            console.log("wait")
+            return finalWidth
+        }else{
+            return parseInt(curentLeft) - 100
+        }
+    })
+}
+
+// btn working
+
+prevBtn.on("click", increaseLeft)
+nextBtn.on("click", decreaseLeft)
