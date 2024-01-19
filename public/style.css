@@ -132,3 +132,44 @@ body{
     grid-row-start: 2;
     left: 0;
 }
+
+/* sidebar */
+
+#sidebarE{
+    position:fixed;
+    z-index: 9999;
+    top:50%;
+    transform: translateY(-50%);
+    right: -400px;
+    transition: all 0.5s ease;
+}
+
+#sidebarE:hover{
+    right: 0px;
+}
+
+.sidebar-trigger{
+    height: 150px;
+    width: 100px  !important;
+    text-align: center;
+    display:flex;
+    justify-content:center;
+    align-items: center;
+    cursor: pointer;
+    transition: all 0.5s ease;
+}
+
+.sidebar-trigger h4{
+    transform: rotate(270deg);
+    transition: all 0.5s ease;
+}
+
+#sidebarE:hover .sidebar-trigger h4{
+    transform: rotate(0deg);
+}
+
+.sidebar-content{
+    width: 400px !important;
+    height:300px;
+    background:white;
+}

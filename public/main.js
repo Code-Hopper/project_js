@@ -176,3 +176,5 @@ let decreaseLeft = () => {
 
 prevBtn.on("click", increaseLeft)
 nextBtn.on("click", decreaseLeft)
+
+// sdiebar
